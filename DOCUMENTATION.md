@@ -152,7 +152,6 @@ SendEmailResponse response = client.sendEmail(
 
 ### Arguments
 
-
 #### templateId (required)
 
 Sign in to [GOV.UK Notify](https://www.notifications.service.gov.uk/) and go to the __Templates__ page to find the template ID.
@@ -243,7 +242,7 @@ This is an invitation-only feature. [Contact the GOV.UK Notify team](https://www
 
 To send a document by email, add a placeholder field to the template then upload a file. The placeholder field will contain a secure link to download the document.
 
-#### Add a placeholder field to the template
+### Add a placeholder field to the template
 
 1. Sign in to [GOV.UK Notify](https://www.notifications.service.gov.uk/).
 1. Go to the __Templates__ page and select the relevant email template.
@@ -251,7 +250,7 @@ To send a document by email, add a placeholder field to the template then upload
 
 "Download your document at: ((link_to_document))"
 
-#### Upload your document
+### Upload your document
 
 The document you upload must be a PDF file smaller than 2MB.
 
@@ -849,6 +848,8 @@ If the request is not successful, the client returns a `NotificationClientExcept
 This API call returns one page of up to 250 received text messages. You can get either the most recent messages, or get older messages by specifying a particular notification ID in the [`olderThanId`](#olderThanId) argument.
 
 You can only get messages that are 7 days old or newer.
+
+## Get received text messages 
 
 ### Method
 
