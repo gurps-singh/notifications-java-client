@@ -540,11 +540,7 @@ Notification notification = client.getNotificationById(notificationId);
 
 The ID of the notification. You can find the notification ID in the response to the [original notification method call](#response).
 
-You can also find it by signing in to [GOV.UK Notify](https://www.notifications.service.gov.uk).
-
-1. Sign in to GOV.UK Notify and select __API integration__.
-1. Find the relevant notification in the __Message log__.
-1. Copy the notification ID from the `id` field.
+You can also find it by signing in to [GOV.UK Notify](https://www.notifications.service.gov.uk) and going to the __API integration__ page.
 
 ### Response
 
@@ -697,11 +693,7 @@ byte[] pdfFile = client.getPdfForLetter(notificationId)
 
 The ID of the notification. You can find the notification ID in the response to the [original notification method call](#get-the-status-of-one-message-response).
 
-You can also find it by signing in to [GOV.UK Notify](https://www.notifications.service.gov.uk).
-
-1. Sign in to GOV.UK Notify and select __API integration__.
-1. Find the relevant notification in the __Message log__.
-1. Copy the notification ID from the `id` field.
+You can also find it by signing in to [GOV.UK Notify](https://www.notifications.service.gov.uk) and going to the __API integration__ page.
 
 ### Response
 
