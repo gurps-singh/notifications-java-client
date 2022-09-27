@@ -270,7 +270,7 @@ To help protect your files you can also:
 * ask recipients to confirm their email address before downloading
 * choose the length of time that a file is available to download
 
-To turn these features on or off, you will need version X.X.X of the Java client library or a more recent version.
+To turn these features on or off, you will need version 3.18.0-RELEASE of the Java client library or a more recent version.
 
 #### Add contact details to the file download page
 
@@ -340,9 +340,9 @@ From 29 March 2023, we will turn this feature on by default for every file you s
 
 ##### Turn on email address check
 
-To use this feature before 29 March 2023 you will need version X.X.X of the Java client library, or a more recent version.
+To use this feature before 29 March 2023 you will need version 3.18.0-RELEASE of the Java client library, or a more recent version.
 
-To make the recipient confirm their email address before downloading the file, set the `verify_email_before_download` flag to `true`.
+To make the recipient confirm their email address before downloading the file, set the `confirmEmailBeforeDownload` flag to `true`.
 
 You will not need to do this after 29 March.
 
@@ -352,7 +352,7 @@ File file = new File(classLoader.getResource("document_to_upload.pdf").getFile()
 byte [] fileContents = FileUtils.readFileToByteArray(file);
 
 HashMap<String, Object> personalisation = new HashMap();
-personalisation.put("link_to_file", client.prepareUpload(fileContents));
+personalisation.put("link_to_file", client.prepareUpload(fileContents, false, true, "52 weeks"));
 client.sendEmail(templateId,
                  emailAddress,
                  personalisation,
@@ -364,7 +364,7 @@ client.sendEmail(templateId,
 
 If you do not want to use this feature after 29 March 2023, you can turn it off on a file-by-file basis.
 
-To do this you will need version X.X.X of the Java client library, or a more recent version.
+To do this you will need version 3.18.0-RELEASE of the Java client library, or a more recent version.
 
 You should not turn this feature off if you send files that contain:
 
@@ -372,7 +372,7 @@ You should not turn this feature off if you send files that contain:
 * commercially sensitive information
 * information classified as ‘OFFICIAL’ or ‘OFFICIAL-SENSITIVE’ under the [Government Security Classifications](https://www.gov.uk/government/publications/government-security-classifications) policy
 
-To let the recipient download the file without confirming their email address, set the `verify_email_before_download` flag to `false`.
+To let the recipient download the file without confirming their email address, set the `confirmEmailBeforeDownload` flag to `false`.
 
 
 ```java
@@ -381,7 +381,7 @@ File file = new File(classLoader.getResource("document_to_upload.pdf").getFile()
 byte [] fileContents = FileUtils.readFileToByteArray(file);
 
 HashMap<String, Object> personalisation = new HashMap();
-personalisation.put("link_to_file", client.prepareUpload(fileContents));
+personalisation.put("link_to_file", client.prepareUpload(fileContents, false, false, "52 weeks"));
 client.sendEmail(templateId,
                  emailAddress,
                  personalisation,
@@ -391,11 +391,11 @@ client.sendEmail(templateId,
 
 #### Choose the length of time that a file is available to download
 
-Set the number of weeks you want the file to be available using the `retention_period` key.
+Set the number of weeks you want the file to be available using the `retention_period` parameter.
 
 You can choose any value between 1 week and 78 weeks.
 
-To use this feature will need version X.X.X of the Java client library, or a more recent version.
+To use this feature will need version 3.18.0-RELEASE of the Java client library, or a more recent version.
 
 If you do not choose a value, the file will be available for the default period of 78 weeks (18 months).
 
@@ -405,7 +405,7 @@ File file = new File(classLoader.getResource("document_to_upload.pdf").getFile()
 byte [] fileContents = FileUtils.readFileToByteArray(file);
 
 HashMap<String, Object> personalisation = new HashMap();
-personalisation.put("link_to_file", client.prepareUpload(fileContents));
+personalisation.put("link_to_file", client.prepareUpload(fileContents, false, false, "52 weeks"));
 client.sendEmail(templateId,
                  emailAddress,
                  personalisation,
