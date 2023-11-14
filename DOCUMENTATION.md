@@ -32,6 +32,25 @@ If you use a proxy you can pass it into the NotificationClient constructor.
 import uk.gov.service.notify.NotificationClient;
 NotificationClient client = new NotificationClient(apiKey, proxy);
 ```
+## Error codes
+
+Errors consist of:
+
+- a code, for example ‘400’
+- a type, for example’BadRequestError’
+- a message, for example ‘Mobile numbers can only include: 0 1 2 3 4 5 6 7 8 9 ( ) + -‘
+
+Do not use the error message despcriptions in your code. These can sometimes change, which may affect your API integration.
+
+Use the error code or error type instead, as these will not change.
+
+Find more information on error codes in:
+
+- [send a message](https://docs.notifications.service.gov.uk/java.html#send-a-message)
+- [get message status](https://docs.notifications.service.gov.uk/java.html#get-message-status)
+- [get a template](https://docs.notifications.service.gov.uk/java.html#get-a-template)
+- [get received text messages](https://docs.notifications.service.gov.uk/java.html#get-received-text-messages)
+
 
 ## Send a message
 
