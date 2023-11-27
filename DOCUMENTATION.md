@@ -217,6 +217,24 @@ personalisation.put("list", listOfItems); // Will appear as a bulleted list in t
 ```
 If a template does not have any placeholder fields for personalised information, you must pass in an empty map or `null`.
 
+You can personalise the bullet points in your template. For example:
+
+```java
+Introduce bullet points with a lead-in line ending in a colon:
+((mybullets))
+Leave one empty line space before the next paragraph.
+
+```
+
+Make an API call pass in a list of strings for the value of the  mybullets placeholder instead of just a single string. This will automatically format the list as bullet points:
+
+```java
+"personalisation": {
+  "mybullets": ["item 1", "item 2", "item 3"],
+}
+
+```
+
 ##### reference (required)
 
 A unique identifier you create. This reference identifies a single unique notification or a batch of notifications. It must not contain any personal information such as name or postal address. If you do not have a reference, you must pass in an empty string or `null`.
@@ -503,6 +521,25 @@ personalisation.put("list", listOfItems); // Will appear as a bulleted list in t
 ```
 
 If a template does not have any placeholder fields for personalised information, you must pass in an empty map or `null`.
+
+You can personalise the bullet points in your template. For example:
+
+```java
+Introduce bullet points with a lead-in line ending in a colon:
+((mybullets))
+Leave one empty line space before the next paragraph.
+
+```
+
+Make an API call pass in a list of strings for the value of the  mybullets placeholder instead of just a single string. This will automatically format the list as bullet points:
+
+```java
+"personalisation": {
+  "mybullets": ["item 1", "item 2", "item 3"],
+}
+
+```
+
 
 ##### reference (required)
 
